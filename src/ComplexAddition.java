@@ -1,23 +1,38 @@
 import java.util.Scanner;
 
 class Complex {
-    
+    int real;
+    int imag;
 
-    // TODO: parameterized constructor Complex(int real, int imag)
+    Complex(int real, int imag) {
+        this.real = real;
+        this.imag = imag;
+    }
 
-    // TODO: Method to add two complex numbers: add(Complex other) returning new Complex
-    // Or static method add(Complex c1, Complex c2)
+    // Static method to add two complex numbers
+    static Complex add(Complex c1, Complex c2) {
+        return new Complex(c1.real + c2.real, c1.imag + c2.imag);
+    }
 }
 
 public class ComplexAddition {
-    
-        // TODO: Read real1, imag1
-        // TODO: Read real2, imag2
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        int c = sc.nextInt();
+        int d = sc.nextInt();
+
+        Complex c1 = new Complex(a, b);
+        Complex c2 = new Complex(c, d);
+
+        // Using the static method from the Complex class
+        Complex c3 = Complex.add(c1, c2);
+
+        // Printing in the requested format
+        System.out.println(c3.real + " + " + c3.imag + "i");
         
-        // TODO: Create two Complex objects
-        
-        // TODO: Add them
-        
-        // TODO: Print result in "real + imagi" format (e.g., "6 + 8i")
-    
+        sc.close();
+    }
 }
